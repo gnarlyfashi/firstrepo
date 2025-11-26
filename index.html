@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Firstrepo · Project Landing Page</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --accent: #a855f7;
+      --accent-2: #22d3ee;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --card: #0b1220;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.12), transparent 20%),
+                  radial-gradient(circle at 85% 10%, rgba(34, 211, 238, 0.12), transparent 20%),
+                  radial-gradient(circle at 40% 80%, rgba(34, 197, 94, 0.08), transparent 25%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 72px 5% 48px;
+      text-align: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(90deg, rgba(168, 85, 247, 0.2), rgba(34, 211, 238, 0.18));
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    .pill svg {
+      height: 18px;
+      width: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.4rem);
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    p.lede {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.9), rgba(34, 211, 238, 0.8));
+      color: #0b1220;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    main {
+      padding: 0 5% 72px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .card {
+      padding: 20px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(168, 85, 247, 0.15);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .section-title span {
+      width: 46px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      display: inline-block;
+      border-radius: 999px;
+    }
+
+    .callout {
+      margin-top: 46px;
+      padding: 20px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, rgba(168, 85, 247, 0.12), rgba(34, 211, 238, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 32px 5% 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v18M3 12h18" />
+      </svg>
+      Welcome to firstrepo
+    </div>
+    <h1>Launch a sleek GitHub Pages site for your next project.</h1>
+    <p class="lede">
+      This landing page is ready to publish on GitHub Pages. Tailored sections highlight your project's value, roadmap, and quickstart details so visitors can explore and get involved instantly.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#get-started">Get Started</a>
+      <a class="btn secondary" href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" rel="noreferrer">Pages Docs</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="section-title"><span></span>Highlights</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Fast to deploy</h3>
+        <p>Drop this repo on GitHub, enable Pages, and your site is live with no external dependencies or build tools.</p>
+        <div class="tag">Static HTML</div>
+      </div>
+      <div class="card">
+        <h3>Customizable styles</h3>
+        <p>Update the accent colors, typography, or layout directly in the embedded CSS to match your brand.</p>
+        <div class="tag">Editable theme</div>
+      </div>
+      <div class="card">
+        <h3>Clear project story</h3>
+        <p>Dedicated sections for value, roadmap, and contribution details make onboarding collaborators simple.</p>
+        <div class="tag">Built for open source</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 46px;"><span></span>Project Overview</div>
+    <div class="grid">
+      <div class="card">
+        <h3>What you get</h3>
+        <p>Concise hero messaging, highlight cards, and a call-to-action panel help visitors focus on how to use or support the project.</p>
+      </div>
+      <div class="card">
+        <h3>How to adapt it</h3>
+        <p>Swap the copy, add new cards, or embed examples—no additional tooling needed. The design is entirely self contained.</p>
+      </div>
+      <div class="card">
+        <h3>Ship anywhere</h3>
+        <p>Because the page is static, it works on GitHub Pages, Netlify, Vercel, or any static file host.</p>
+      </div>
+    </div>
+
+    <div id="get-started" class="callout">
+      <div>
+        <div class="section-title" style="margin-bottom: 8px;"><span></span>Get started</div>
+        <h2 style="margin: 0 0 8px;">Publish on GitHub Pages in minutes</h2>
+        <p style="margin: 0; color: var(--muted);">
+          Commit your changes, push to your repository, and enable Pages on the <em>Settings → Pages</em> tab. Select the branch and root folder, then save.
+        </p>
+      </div>
+      <a class="btn" href="https://github.com/new">Create repository</a>
+    </div>
+  </main>
+
+  <footer>
+    Built with ❤️ using plain HTML & CSS. Customize freely and share your work with the world.
+  </footer>
+</body>
+</html>
